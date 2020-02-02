@@ -18,11 +18,9 @@ from django.urls import path
 from api import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('test', views.PicListView.as_view(), name=None),
+    path('adm', views.PicListView.as_view(), name=None),
     path('', views.Home, name='QUALITY PICS'),
     path('id/<int:pk>', views.SinglePicView.as_view(), name=None),
-    path('category/<str:category>', views.CategoryPicView.as_view(), name=None),
     path('randompic', views.RandomPicView.as_view(), name=None),
 
 
