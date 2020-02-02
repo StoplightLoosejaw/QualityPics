@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+{% load static %}
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>QUALITY PICS</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+ </head>
+ <body>
+<div class="page-header">
+    <h1>QUALITY PICS</h1>
+</div>
+<br>
+ <div align="center" id="layer2">
+
+<h2>Сейчас количество записей в бд {{ maxval }}. <br> Введите число или доверьтесь рандому и получите качественную картинку</h2>
+<br> 
+<br> 
+<input id = "picid" type="number" min = 1 max = 10 value="">
+<button id="getpicbutton" class = "button" onclick="GetPic();">GetPic</button> 
+<button id="randombutton" class = "button" onclick="GetRandomPic();">Random</button>
+	<br>
+ <span id="error"></span>
+	<br>
+<img id="pic" src=>
+	<br>
+	<br>
+ <span id="description"></span>
+
+  </div>
+</body>
+ 
+<script>
+function SendRequest(url) {
+    var Httpreq = new XMLHttpRequest(); 
+    Httpreq.open("GET",url,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;
+	}
+function GetRandomPic() {
+    document.getElementById("error").innerHTML = window.location.href+'randompic';
+    response = SendRequest(window.location.href+'randompic')
+    var json_obj = JSON.parse(response);
+    document.getElementById("error").innerHTML = "";
+    document.getElementById("pic").src =  json_obj.url ;
+    document.getElementById("description").innerHTML = json_obj.description; 
+	}
+function GetPic() {
+    var id_num = document.getElementById('picid').value;
+    if (id_num > {{ maxval }} || id_num < 1)
+		{
+		document.getElementById("error").innerHTML = "Please insert value in range(0, {{ maxval }})"; 
+		}
+    else 
+	{
+    response = SendRequest(window.location.href+'id/'+ id_num)
+    var json_obj = JSON.parse(response);
+    document.getElementById("pic").src =  json_obj.url ;
+    document.getElementById("description").innerHTML = json_obj.description; 
+	}
+	}
+</script>
+
+</html>
