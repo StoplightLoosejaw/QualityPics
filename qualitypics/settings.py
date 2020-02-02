@@ -75,11 +75,8 @@ WSGI_APPLICATION = 'qualitypics.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-   'default': {
-        'ENGINE': os.environ['DATABASE_URL'],
-            }
-}
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
