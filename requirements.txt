@@ -6,3 +6,4 @@ whitenoise
 dj-database-url
 psycopg2
 gunicorn==19.6.0
+django-braces
