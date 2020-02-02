@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'qualitypics.wsgi.application'
 
 DATABASES = {
    'default': {
-        'ENGINE': os.environ('DATABASE_URL'),
+        'ENGINE': os.environ['DATABASE_URL'],
             }
 }
 
