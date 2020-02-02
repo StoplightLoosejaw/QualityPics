@@ -76,7 +76,6 @@ WSGI_APPLICATION = 'qualitypics.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
         default=os.environ('DATABASE_URL')
 }
 
