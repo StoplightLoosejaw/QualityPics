@@ -4,10 +4,9 @@ from . import serializers
 from rest_framework import generics, status
 from rest_framework.response import Response
 import random
+from braces import views
 
 # Create your views here.
-
-from django.shortcuts import render
 
 def Home(request):
     queryset = Pic.objects.all()
@@ -26,7 +25,9 @@ class RandomPicView(generics.RetrieveAPIView):
             data = serializer.data
             return Response(data)
 
-class PicListView(generics.ListCreateAPIView):
+class PicListView(views.LoginRequiredMixin,
+                  views.SuperuserRequiredMixin,
+                  generics.ListCreateAPIView):
         queryset = Pic.objects.all()
         serializer_class = serializers.PicSerializer
 
