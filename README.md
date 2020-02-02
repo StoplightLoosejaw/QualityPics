@@ -8,5 +8,4 @@ then I decided that I want to visualise somehow results of its work. So there is
 <br>
                                 id/{{somenumber}} - retrieves JSON with data about pic with that id <br>
                                 randompic - retrieves JSON with data about random pic <br>
-                                category/{{category}} - retrieves JSON with data about all pics within that category
    
