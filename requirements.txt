@@ -5,3 +5,4 @@ sqlparse==0.3.0
 whitenoise
 dj-database-url
 psycopg2
+gunicorn==19.6.0
