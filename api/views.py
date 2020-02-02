@@ -34,13 +34,3 @@ class PicListView(views.LoginRequiredMixin,
 class SinglePicView(generics.RetrieveAPIView):
         queryset = Pic.objects.all()
         serializer_class = serializers.PicSerializer
-
-class CategoryPicView(generics.ListCreateAPIView):
-        queryset = Pic.objects.all()
-        serializer_class = serializers.PicSerializer
-
-        def list(self, request, **kwargs):
-                queryset = Pic.objects.filter(**kwargs)
-                serializer = serializers.PicSerializer(queryset, many=True)
-                data = serializer.data
-                return Response(serializer.data)
