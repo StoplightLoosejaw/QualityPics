@@ -3,3 +3,5 @@ djangorestframework==3.11.0
 pytz==2019.1
 sqlparse==0.3.0
 whitenoise
+dj-database-url
+psycopg2
