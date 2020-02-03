@@ -8,4 +8,8 @@ then I decided that I want to visualise somehow results of its work. So there is
 <br>
                                 id/{{somenumber}} - retrieves JSON with data about pic with that id <br>
                                 randompic - retrieves JSON with data about random pic <br>
+UPD
+<br> I hid GET and POST method behind autorization only for superuser. Next I am going to make a menu and some register form. <br>
+    accounts/logout/' and accounts/login/ for logout and login (obviously) <br>
+    /adm -GET and POST
    
