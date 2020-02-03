@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML>
+{% load static %}
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>QUALITY PICS</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+ </head>
+ <body>
+<div class="page-header">
+    <h1>QUALITY PICS</h1>
+</div>
+<br>
+ <div align="center" id="layer2">
+    <h1>Log-in</h1>
+    <p>Please, use the following form to log-in:</p>
+    <form action="." method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Log-in"></p>
+    </form>
+
+  </div>
+</body>
+ 
+</html>
